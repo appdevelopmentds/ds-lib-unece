@@ -33,7 +33,10 @@ namespace DS.Lib.Unece
             public string SICode { get; set; }
             public string FriendlyName { get; set; }
         }
-
+        /// <summary>
+        /// Generated from the file UNECE\rec20_Rev17e.xlsx
+        /// Downloaded: https://unece.org/trade/documents/revision-17-annexes-i-iii
+        /// </summary>
         private static readonly UneceToSIDefinition[] uneceToSIDefinitions = {
 new() { UneceCode = "C81", SICode = "rad", FriendlyName = "radian" },
 new() { UneceCode = "C25", SICode = "mrad", FriendlyName = "milliradian" },

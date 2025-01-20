@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS.Lib.Unece", "DS.Lib.Unece\DS.Lib.Unece.csproj", "{A4F1ABEB-3C43-4CA2-98AC-8DAB63A890CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DS.Lib.Unece.Tests", "DS.Lib.Unece.Tests\DS.Lib.Unece.Tests.csproj", "{DF6F38EA-0789-49E1-80FD-3883DB9F8458}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{A4F1ABEB-3C43-4CA2-98AC-8DAB63A890CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4F1ABEB-3C43-4CA2-98AC-8DAB63A890CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4F1ABEB-3C43-4CA2-98AC-8DAB63A890CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF6F38EA-0789-49E1-80FD-3883DB9F8458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6F38EA-0789-49E1-80FD-3883DB9F8458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6F38EA-0789-49E1-80FD-3883DB9F8458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6F38EA-0789-49E1-80FD-3883DB9F8458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
