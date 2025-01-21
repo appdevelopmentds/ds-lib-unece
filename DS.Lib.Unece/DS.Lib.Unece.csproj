@@ -2,7 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <LangVersion>10</LangVersion>
+    <LangVersion>Latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <PackageId>DS.Lib.Unece</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Laszlo Vörös</Authors>
+    <Company>Appdevelopment.DS</Company>
+    <Description>Convert (translate) operation between UNECE-codes and SI-symbols.</Description>
+    <PackageTags>UNECE</PackageTags>
+    <RepositoryUrl>https://github.com/appdevelopmentds/ds-lib-unece</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageOutputPath>./nupkg</PackageOutputPath> <!-- optional -->
   </PropertyGroup>
 
 </Project>

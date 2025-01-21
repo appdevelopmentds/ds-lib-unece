@@ -29,9 +29,9 @@ namespace DS.Lib.Unece
 
         private class UneceToSIDefinition
         {
-            public string UneceCode { get; set; }
-            public string SICode { get; set; }
-            public string FriendlyName { get; set; }
+            public string UneceCode { get; set; } = String.Empty;
+            public string SICode { get; set; } = String.Empty;
+            public string FriendlyName { get; set; } = String.Empty;
         }
         /// <summary>
         /// Generated from the file UNECE\rec20_Rev17e.xlsx
