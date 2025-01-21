@@ -19,13 +19,11 @@ public sealed class SimpleTests
     [TestMethod]
     public void Test_UneceToSI_not_found()
     {
-        // Act & Assert
         var exception = Assert.ThrowsException<IndexOutOfRangeException>(() => { string siCode = UnitOfMeasureUneceSIConverter.UneceToSI("ABCD123"); });
     }
     [TestMethod]
     public void Test_SIToUnece_not_found()
     {
-        // Act & Assert
         var exception = Assert.ThrowsException<IndexOutOfRangeException>(() => { string siCode = UnitOfMeasureUneceSIConverter.SIToUnece("ABCD123"); });
     }
 
