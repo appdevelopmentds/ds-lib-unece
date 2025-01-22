@@ -9,7 +9,7 @@
     <Authors>Laszlo Vörös</Authors>
     <Company>Appdevelopment.DS</Company>
     <Description>Convert (translate) operation between UNECE-codes and SI-symbols.</Description>
-    <PackageReadmeFile>../README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>UNECE</PackageTags>
     <RepositoryUrl>https://github.com/appdevelopmentds/ds-lib-unece</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
