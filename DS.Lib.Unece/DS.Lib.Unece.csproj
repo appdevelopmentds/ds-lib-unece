@@ -5,10 +5,11 @@
     <LangVersion>Latest</LangVersion>
     <Nullable>enable</Nullable>
     <PackageId>DS.Lib.Unece</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Laszlo Vörös</Authors>
     <Company>Appdevelopment.DS</Company>
     <Description>Convert (translate) operation between UNECE-codes and SI-symbols.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>UNECE</PackageTags>
     <RepositoryUrl>https://github.com/appdevelopmentds/ds-lib-unece</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

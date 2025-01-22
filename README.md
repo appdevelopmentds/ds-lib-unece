@@ -1,2 +1,2 @@
 # ds-lib-unece
-UNECE converts to SI and back
+With this package you can convert the codes in UNECE Recomendation 20 (unit of measures) in SI-symbols and back.
