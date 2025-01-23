@@ -36,6 +36,7 @@ namespace DS.Lib.Unece
         /// <summary>
         /// Generated from the file UNECE\rec20_Rev17e.xlsx
         /// Downloaded: https://unece.org/trade/documents/revision-17-annexes-i-iii
+        /// ="new() { UneceCode = """ & G2 & """, SICode = """ & WECHSELN(WENN(ISTLEER(J2); H2; J2); """"; "\""") & """, FriendlyName = """ &  WECHSELN(WECHSELN(H2; """"; "\"""); ZEICHEN(10); " ") & """ }, "
         /// </summary>
         private static readonly UneceToSIDefinition[] Annex_I = {
 new() { UneceCode = "C81", SICode = "rad", FriendlyName = "radian" },
@@ -1679,6 +1680,9 @@ new() { UneceCode = "KNM", SICode = "KN/m2", FriendlyName = "kilonewton per squa
 new() { UneceCode = "Q35", SICode = "MW/min", FriendlyName = "megawatts per minute" },
 };
 
+        /// <summary>
+        /// ="new() { UneceCode = """ & B2 & """, SICode = """ & WECHSELN(WENN(ISTLEER(F2); C2; F2); """"; "\""") & """, FriendlyName = """ &  WECHSELN(WECHSELN(C2; """"; "\"""); ZEICHEN(10); " ") & """ }, "
+        /// </summary>
         private static readonly UneceToSIDefinition[] Annex_II_III =
         {
 new() { UneceCode = "05", SICode = "lift", FriendlyName = "lift" },
