@@ -17,6 +17,18 @@ public sealed class SimpleTests
         Assert.AreEqual("MTR", code);
     }
     [TestMethod]
+    public void Test_LS()
+    {
+        string code = UnitOfMeasureUneceSIConverter.UneceToSI("LS");
+        Assert.AreEqual("lump sum", code);
+    }
+    [TestMethod]
+    public void Test_MQW()
+    {
+        string code = UnitOfMeasureUneceSIConverter.UneceToSI("MQW");
+        Assert.AreEqual("m³·wk", code);
+    }
+    [TestMethod]
     public void Test_UneceToSI_not_found()
     {
         var exception = Assert.ThrowsException<IndexOutOfRangeException>(() => { string siCode = UnitOfMeasureUneceSIConverter.UneceToSI("ABCD123"); });

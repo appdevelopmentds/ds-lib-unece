@@ -1,5 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net48</TargetFrameworks>
     <LangVersion>Latest</LangVersion>
@@ -13,9 +12,11 @@
     <PackageTags>UNECE</PackageTags>
     <RepositoryUrl>https://github.com/appdevelopmentds/ds-lib-unece</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageOutputPath>./nupkg</PackageOutputPath> <!-- optional -->
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <!-- optional -->
   </PropertyGroup>
   <ItemGroup>
-    <None Include="../README.md" Pack="true" PackagePath="\"/>
+    <None Include="UNECE\rec20_Rev17e-2021.xlsx" />
+    <None Include="../README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
