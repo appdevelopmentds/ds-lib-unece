@@ -19,4 +19,13 @@
     <None Include="UNECE\rec20_Rev17e-2021.xlsx" />
     <None Include="../README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="ResRec20Rev17e-UNECESI.resx">
+      <SubType>Designer</SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ResRec20Rev17e-SIUNECE.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>
