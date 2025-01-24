@@ -84,7 +84,7 @@ public sealed class TranslatorTests
     [TestMethod]
     public void Test_try_m_to_MTR()
     {
-        bool success = UnitOfMeasureTranslator.TrySIToUNECE("m", out string code);
+        bool success = UnitOfMeasureTranslator.TrySItoUNECE("m", out string code);
         Assert.AreEqual("MTR", code);
         Assert.IsTrue(success);
     }
@@ -115,14 +115,14 @@ public sealed class TranslatorTests
     [TestMethod]
     public void Test_try_SI_not_found_without_fallback()
     {
-        bool success = UnitOfMeasureTranslator.TrySIToUNECE("m4", out string code);
+        bool success = UnitOfMeasureTranslator.TrySItoUNECE("m4", out string code);
         Assert.IsFalse(success);
         Assert.AreEqual("m4", code); // without fallback, returns the same.
     }
     [TestMethod]
     public void Test_try_SI_not_found_with_fallback()
     {
-        bool success = UnitOfMeasureTranslator.TrySIToUNECE("m4", out string code, "FB");
+        bool success = UnitOfMeasureTranslator.TrySItoUNECE("m4", out string code, "FB");
         Assert.IsFalse(success);
         Assert.AreEqual("FB", code); // fallback
     }

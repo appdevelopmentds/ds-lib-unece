@@ -87,7 +87,7 @@ namespace DS.Lib.Unece
         /// <param name="uneceCode">Output: the found UNECE-Unit.</param>
         /// <param name="fallback">The fallback-value, if the symbol is not found. If not provided, the <paramref name="siCode"/> will be used.</param>
         /// <returns></returns>
-        public static bool TrySIToUNECE(string siCode, out string uneceCode, string? fallback = null)
+        public static bool TrySItoUNECE(string siCode, out string uneceCode, string? fallback = null)
         {
             string? found = resourceManagerSIUNECE.GetString(siCode);
             if (!String.IsNullOrEmpty(found))
