@@ -26,3 +26,11 @@ string code = UnitOfMeasureTranslator.UNECEtoSI("LS"); // returns "lump sum"
 
 
 ```
+
+### Override or extend translations
+``` csharp
+UnitOfMeasureTranslator.OverrideSItoUNECETranslation("St", "H87");
+UnitOfMeasureTranslator.OverrideSItoUNECETranslation("m", "MMM");
+string code = UnitOfMeasureTranslator.SItoUNECE("St"); // returns "H87"
+string code = UnitOfMeasureTranslator.SItoUNECE("m"); // returns "MMM"
+```

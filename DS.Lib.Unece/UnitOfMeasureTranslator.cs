@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Reflection.Emit;
 using System.Resources;
 using System.Text;
 
@@ -10,6 +11,8 @@ namespace DS.Lib.Unece
     {
         private static readonly ResourceManager resourceManagerUNECESI = new ResourceManager("DS.Lib.Unece.ResRec20Rev17e-UNECESI", typeof(UnitOfMeasureTranslator).Assembly);
         private static readonly ResourceManager resourceManagerSIUNECE = new ResourceManager("DS.Lib.Unece.ResRec20Rev17e-SIUNECE", typeof(UnitOfMeasureTranslator).Assembly);
+        private static readonly Dictionary<string, string> __SItoUNECEoverrides = new Dictionary<string, string>();
+        private static readonly Dictionary<string, string> __UNECEtoSIoverrides = new Dictionary<string, string>();
 
         /// <summary>
         /// Returns the SI-Unit-Symbol of the UNECE-Code. 
@@ -20,9 +23,7 @@ namespace DS.Lib.Unece
         /// <exception cref="IndexOutOfRangeException"></exception>
         public static string UNECEtoSI(string uneceCode)
         {
-            string? siCode = resourceManagerUNECESI.GetString(uneceCode);
-
-            if (!String.IsNullOrEmpty(siCode))
+            if (TryUNECEtoSI(uneceCode, out string siCode))
             {
                 return siCode;
             }
@@ -43,6 +44,11 @@ namespace DS.Lib.Unece
         /// <returns></returns>
         public static bool TryUNECEtoSI(string uneceCode, out string siCode, string? fallback = null)
         {
+            if (__UNECEtoSIoverrides.TryGetValue(uneceCode, out string? overrideValue))
+            {
+                siCode = overrideValue;
+                return true;
+            }
             string? found = resourceManagerUNECESI.GetString(uneceCode);
             if (!String.IsNullOrEmpty(found))
             {
@@ -66,9 +72,7 @@ namespace DS.Lib.Unece
         /// <exception cref="IndexOutOfRangeException"></exception>
         public static string SItoUNECE(string siCode)
         {
-            string? uneceCode = resourceManagerSIUNECE.GetString(siCode);
-
-            if (!String.IsNullOrEmpty(uneceCode))
+            if (TrySItoUNECE(siCode, out string uneceCode))
             {
                 return uneceCode;
             }
@@ -89,6 +93,12 @@ namespace DS.Lib.Unece
         /// <returns></returns>
         public static bool TrySItoUNECE(string siCode, out string uneceCode, string? fallback = null)
         {
+            if (__SItoUNECEoverrides.TryGetValue(siCode, out string? overrideValue))
+            {
+                uneceCode = overrideValue;
+                return true;
+            }
+
             string? found = resourceManagerSIUNECE.GetString(siCode);
             if (!String.IsNullOrEmpty(found))
             {
@@ -102,5 +112,39 @@ namespace DS.Lib.Unece
             }
         }
 
+        /// <summary>
+        /// Overrides a translation between SI and UNECE.
+        /// </summary>
+        /// <param name="siCode">The SI-symbol to override.</param>
+        /// <param name="uneceCode">The overridden result. To remove an override leave this parameter null.</param>
+        public static void OverrideSItoUNECETranslation(string siCode, string? uneceCode = null)
+        {
+            if (uneceCode != null)
+                __SItoUNECEoverrides[siCode] = uneceCode;
+            else
+                __SItoUNECEoverrides.Remove(siCode);
+        }
+
+        /// <summary>
+        /// Overrides a translation between UNECE and SI.
+        /// </summary>
+        /// <param name="uneceCode">The UNECE-code to override.</param>
+        /// <param name="siCode">The overridden result. To remove an override leave this parameter null.</param>
+        public static void OverrideUNECEtoSITranslation(string uneceCode, string? siCode = null)
+        {
+            if (siCode != null)
+                __UNECEtoSIoverrides[uneceCode] = siCode;
+            else
+                __UNECEtoSIoverrides.Remove(uneceCode);
+        }
+
+        /// <summary>
+        /// Reset all overrides.
+        /// </summary>
+        public static void ResetOverrides()
+        {
+            __SItoUNECEoverrides.Clear();
+            __UNECEtoSIoverrides.Clear();
+        }
     }
 }
